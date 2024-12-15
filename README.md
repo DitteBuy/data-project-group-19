@@ -1056,11 +1056,6 @@ As we can see, the feature value distributions are now normalized for both the t
 Now we can fit a logistic regression model.
 In Scikit-learn we first initiate a LogisticRegression mode ! 
 Train the model on the normalized train set:
-```{python}
-from sklearn.linear_model import LogisticRegression
-
-cls_std = LogisticRegression()
-```
 
 ```{python}
 # Import the LogisticRegression model
@@ -1392,11 +1387,6 @@ As we can see, the feature value distributions are now normalized for both the t
 Now we can fit a logistic regression model.
 In Scikit-learn we first initiate a LogisticRegression mode ! 
 Train the model on the normalized train set:
-```{python}
-from sklearn.linear_model import LogisticRegression
-
-cls_std = LogisticRegression()
-```
 
 ```{python}
 # Import the LogisticRegression model
@@ -1663,13 +1653,6 @@ print(dict(zip(label_encoder.classes_, label_encoder.transform(label_encoder.cla
 print(clean_metadata[['Study.Group', 'Study.Group_encoded']].head())
 ```
 ```{python}
-from sklearn.preprocessing import LabelEncoder
-
-# Create a LabelEncoder object
-label_encoder = LabelEncoder()
-```
-
-```{python}
 # Variables to encode
 categorical_columns = ['Gender', 'Antibiotics', 'race']
 ```
@@ -1774,16 +1757,20 @@ The scaler object has a function transform() that uses the means and variances c
 #normalising the features if the train set 
 train_X_std = scaler_std.transform(train_X)
 train_X_std = pd.DataFrame(train_X_std, columns=train_X.columns)
-
-train_X_std
 ```
 ```{python}
 # normalising the features of the test set 
 val_X_std = scaler_std.transform(val_X)
 val_X_std = pd.DataFrame(val_X_std, columns=train_X.columns)
-
-val_X_std
 ```
+```{python}
+# Display the normalized train features
+print(train_X_std.head())
+
+# Display the normalized test features
+print(val_X_std.head())
+```
+
 We can now plot the normalized features:
 ```{python}
 #plotting distribution of the features of the train set 
@@ -1805,11 +1792,6 @@ As we can see, the feature value distributions are now normalized for both the t
 Now we can fit a logistic regression model.
 In Scikit-learn we first initiate a LogisticRegression mode ! 
 Train the model on the normalized train set:
-```{python}
-from sklearn.linear_model import LogisticRegression
-
-cls_std = LogisticRegression()
-```
 
 ```{python}
 # Import the LogisticRegression model
