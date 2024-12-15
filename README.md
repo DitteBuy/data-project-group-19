@@ -29,12 +29,6 @@ Then click 'Run All' to execute the entire script.
 
 **machinelearning.py:** Open a new notebook in Kaggle. In the input section of the right-hand panel (next to the code editor), click the "Upload" button and select "New Dataset". Browse your files to locate the metadata.tsv dataset you just downloaded. Assign a name to the dataset and create it. In the code, under the #load metadata section, replace the file path with /kaggle/input/your-chosen-name/metadata.tsv. Then copy the whole code from machinelearning.py and paste it into a code cell in your kaggle notebook, then click 'run all' to execute the entire script.
 
-A pop-up window will appear showing datasets you've uploaded or ones you've accessed on Kaggle. (previously upload the dataset 'metadata.tsv' in your dataset folder in your kaggle account)
-Search for your dataset by name or browse your datasets and select the one you want to use.
-Once selected, click on "Add" to link the dataset to your notebook
-
-Then copy the whole code from machinelearning.py and paste it into a cell in your kaggle notebook, then click 'run all' to execute the entire script.
-
 ## This file also contains all the codes for all 3 parts (Research Question 1, Research Question 2, and machine learning) with explanation. 
 
 # Research question 1 (univariate analysis): 
