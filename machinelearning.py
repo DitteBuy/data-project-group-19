@@ -1066,7 +1066,7 @@ print(f"F1-Score: {f1}")
 cm = confusion_matrix(val_y, predictions_std)
 print("Confusion Matrix:\n", cm)
 
-### Visualise metrics 
+### Visualisation other metrics 
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
