@@ -499,13 +499,13 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
-# # Plotting the distribution of the train set 
+# Plotting the distribution of the train set 
 plt.figure(figsize=(18,6))  # Set the size of the plot
 train_X.sample(5, axis="columns").boxplot()
 plt.xticks(rotation=90)  # Rotate the gene names on the x-axis
 plt.show()  # Show the plot
 
-# # Plotting the distribution of the test set 
+# Plotting the distribution of the test set 
 plt.figure(figsize=(18,6))  # Set the size of the plot
 val_X.sample(5, axis="columns").boxplot()
 plt.xticks(rotation=90)  # Rotate the gene names on the x-axis
@@ -516,10 +516,10 @@ plt.show()  # Show the plot
 # Importing the Scikit-learn object StandardScaler
 from sklearn.preprocessing import StandardScaler
 
-# # First we create a StandardScaler object called scaler_std
+# First we create a StandardScaler object called scaler_std
 scaler_std = StandardScaler()
 
-# # We first compute the mean and standard deviation from the train set
+# We first compute the mean and standard deviation from the train set
 scaler_std.fit(train_X)
 
 print("Means:")
@@ -527,7 +527,7 @@ print(scaler_std.mean_)
 print("Variances:")
 print(scaler_std.var_)
 
-# # We then compute the mean and standard deviation from the test set
+# We then compute the mean and standard deviation from the test set
 scaler_std.fit(val_X)
 
 print("Means:")
@@ -537,25 +537,25 @@ print(scaler_std.var_)
 
 # Next, we normalize the features in the train and test set.
 
-# # Normalizing the features of the train set 
+# Normalizing the features of the train set 
 train_X_std = scaler_std.transform(train_X)
 train_X_std = pd.DataFrame(train_X_std, columns=train_X.columns)
 
 train_X_std
 
-# # Normalizing the features of the test set 
+# Normalizing the features of the test set 
 val_X_std = scaler_std.transform(val_X)
 val_X_std = pd.DataFrame(val_X_std, columns=train_X.columns)
 
 val_X_std
 
-# # Plotting distribution of the features of the train set 
+# Plotting distribution of the features of the train set 
 plt.figure(figsize=(18,6))
 train_X_std.sample(5, axis="columns").boxplot()
 plt.xticks(rotation=90)
 plt.show()
 
-# # Plotting distribution of the features of the test set
+# Plotting distribution of the features of the test set
 plt.figure(figsize=(18,6))
 val_X_std.sample(5, axis="columns").boxplot()
 plt.xticks(rotation=90)
@@ -563,7 +563,7 @@ plt.show()
 
 # As we can see, the feature value distributions are now normalized for both the train set and the test set.
 
-# ### 4) FIT LOGISTIC REGRESSION MODEL 
+### 4) FIT LOGISTIC REGRESSION MODEL 
 # Now we can fit a logistic regression model.
 # In Scikit-learn, we first initiate a LogisticRegression model! 
 # Train the model on the normalized train set
