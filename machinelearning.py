@@ -536,7 +536,7 @@ print("Variances:")
 print(scaler_std.var_)
 
 # Next, we normalize the features in the train and test set.
-
+# The scaler object has a function transform() that uses the means and variances computed by the fit() function to normalize the features and we can make a Pandas DataFrame with the original column names as follows:
 # Normalizing the features of the train set 
 train_X_std = scaler_std.transform(train_X)
 train_X_std = pd.DataFrame(train_X_std, columns=train_X.columns)
@@ -548,6 +548,8 @@ val_X_std = scaler_std.transform(val_X)
 val_X_std = pd.DataFrame(val_X_std, columns=train_X.columns)
 
 val_X_std
+
+# We can now plot the normalized features:
 
 # Plotting distribution of the features of the train set 
 plt.figure(figsize=(18,6))
@@ -629,7 +631,7 @@ plt.show()
 #To determine quality of the model, metrics such as accuracy, precision, recall, or F1-score are needed, as well as insights from a confusion matrix. However, the spread and variability in coefficients suggest the model is using the features to distinguish between classes, which is a positive sign. That said, further evaluation is required to confirm if these coefficients result in accurate predictions.
 
 #Computing the accuracy: 
-# ### 4) PREDICTIONS AND MODEL EVALUATION
+
 # Compute predictions on the validation set val_X_std
 predictions_std = cls_std.predict(val_X_std)
 
